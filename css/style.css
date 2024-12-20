@@ -1,338 +1,256 @@
-/* Umumiy Reset */
-body, h1, h2, h3, p, ul, li, a, input, button {
+/* Umumiy uslublar */
+body {
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out;
 }
 
-body {
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f9;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+/* Konteyner */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-ul {
-    list-style: none;
-}
-
-/* Header */
-.header {
-    background-color: #0a0a0a;
+/* Header va Footer */
+.header, .footer {
+    background-color: #f8f8f8;
     padding: 20px 0;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
 }
 
 .menu {
     display: flex;
-    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    margin-right: 20px;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 .menu-link {
-    font-size: 18px;
-    font-weight: 600;
-    color: #fff;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease-in-out;
 }
 
 .menu-link:hover {
-    color: #f5a623;
+    color: #007bff;
+}
+
+.logo-img {
+    width: 50px;
+    animation: scaleUp 0.8s ease-in-out;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .phone {
-    font-weight: bold;
-    font-size: 18px;
-    color: #fff;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease-in-out;
 }
 
-/* Headline Section */
+.phone:hover {
+    color: #28a745;
+}
+
+/* Asosiy bo'lim */
+.main {
+    padding: 40px 0;
+}
+
 .headline {
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #490e84, #8a2be2);
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-}
-
-.headline .title {
-    font-size: 60px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    animation: fadeIn 2s ease-out;
-}
-
-.headline .subtitle {
-    font-size: 22px;
-    font-weight: 400;
-    margin-bottom: 30px;
-}
-
-.headline-btn {
-    background: #fff;
-    color: #490e84;
-    padding: 15px 40px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    border: 2px solid #490e84;
-}
-
-.headline-btn:hover {
-    background: #490e84;
-    color: #fff;
-    transform: scale(1.05);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Yangiliklar Section */
-.news {
-    padding: 60px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-.news-title {
-    font-size: 36px;
-    font-weight: 700;
     margin-bottom: 40px;
-    animation: fadeIn 1.5s ease-out;
-}
-
-.news-info {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    align-items: center;
-    margin-top: 40px;
-    animation: slideUp 1s ease-out;
-}
-
-.news-info .news-text {
-    flex: 1;
-    font-size: 18px;
-    line-height: 1.8;
-    color: #666;
-    transition: transform 0.3s ease;
-}
-
-.news-info .news-text:hover {
-    transform: translateX(10px);
-}
-
-.news-info .image-news {
-    flex: 1;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.8s ease-in-out;
 }
 
 @keyframes slideUp {
     from {
+        transform: translateY(50px);
         opacity: 0;
-        transform: translateY(30px);
     }
     to {
-        opacity: 1;
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
-/* Ranglar Section */
-.color {
-    padding: 80px 20px;
-    background: #f9f9f9;
-    text-align: center;
+.title {
+    font-size: 2.5rem;
+    margin: 0.5em 0;
 }
 
-.color-title {
-    font-size: 36px;
-    font-weight: 700;
+.headline-img {
+    width: 100%;
+    max-width: 500px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+}
+
+/* Yangiliklar bo'limi */
+.news {
     margin-bottom: 40px;
 }
 
-.color-list {
+.news-title, .color-title, .contacts-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.news-info, .color-list, .contacts-inner {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.color-item {
-    width: 22%;
-    text-align: center;
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
-    overflow: hidden;
+.news-text {
+    flex: 1;
 }
 
-.color-item img {
+.image-news {
+    max-width: 300px;
     width: 100%;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+    height: auto;
+    animation: zoomIn 1s ease-in-out;
+}
+
+/* Ranglar bo'limi */
+.color-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    animation: slideUp 1.2s ease-in-out;
+}
+
+.color-item {
+    text-align: center;
+    flex: 1;
+    transition: transform 0.3s;
 }
 
 .color-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
 }
 
-.color-item:hover img {
-    transform: scale(1.05);
-}
-
-.color-item h3 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-top: 15px;
-    color: #333;
-}
-
-.color-item p {
-    font-size: 16px;
-    color: #777;
-}
-
-/* Buyurtma Section */
-.contacts {
-    padding: 80px 20px;
-    background: #0a0a0a;
-    text-align: center;
-    color: #fff;
-}
-
-.contacts-title {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    animation: fadeIn 2s ease-out;
-}
-
-.contacts-form {
-    display: flex;
+/* Kontaktlar bo'limi */
+.contacts-inner {
     flex-direction: column;
     align-items: center;
-    max-width: 400px;
-    margin: 0 auto;
+    text-align: center;
 }
 
 .contacts-input {
-    margin: 10px 0;
-    padding: 15px;
     width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border 0.3s ease;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
 }
 
 .contacts-input:focus {
-    border-color: #490e84;
-    outline: none;
+    border-color: #007bff;
 }
 
 .order-form {
-    background: #490e84;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
     color: #fff;
-    padding: 15px 30px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-top: 20px;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .order-form:hover {
-    background: #8a2be2;
-    transform: scale(1.05);
+    background-color: #218838;
+    transform: translateY(-5px);
 }
 
 /* Footer */
-.footer {
-    background: #0a0a0a;
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-}
-
 .footer-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
 .footer-link {
-    color: #fff;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
+    color: #000;
+    transition: color 0.3s ease-in-out;
 }
 
 .footer-link:hover {
-    color: #f5a623;
-}
-
-.footer-inner a {
-    color: #fff;
-    font-size: 16px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .news-info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .color-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .color-item {
-        width: 80%;
-        margin-bottom: 15px;
-    }
-
-    .contacts-input {
-        width: 80%;
-    }
-
-    .order-form {
-        width: 80%;
-    }
+    color: #007bff;
 }
